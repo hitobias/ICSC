@@ -1,2 +1,77 @@
 <% provide(:title, 'Home') %>
-<div>asdfsadfasfs</div>
+<div class="jumbotron">
+	<h1>本次報名截止日期為十一月三十日</h1>
+	<p><%= link_to "瞭解更多", "#", class: "btn btn-primary btn-lg" %></p>
+</div>
+<div>
+	<%= image_tag("homeICSC2015.jpg", alt: "ICSC", class:"image-responsive home-banner") %>
+</div>
+<div class="jumbotron">
+	<h1 align="center">Meeting schedule</h1><hr/>
+	<blockquote>
+              <p>We would like to announce that the 2015 International Chinese-speaking Conference will be held in Taipei, Taiwan from Saturday, February 21, 2015 through Lord’s Day, February 22, 2015. We would like to extend an invitation to all the churches and individuals to participate in this gathering.</p>
+              <small class="pull-right"><cite title="Source Title">Living Stream Ministry and the church in Taipei</cite></small>
+    </blockquote>
+
+	<table class="table table-bordered table-striped">
+        <tbody>
+            <tr>
+                <th width="197" colspan="2">Feb. 21st (Sat.)</td>
+                <th width="197" colspan="2">Feb. 22nd (Sun.)</td>
+            </tr>
+            <tr>
+                <td width="96">11:30</td>
+                <td width="101">Admission</td>
+                <td width="99">08:00</td>
+                <td width="98">Admission</td>
+            </tr>
+            <tr>
+                <td width="96">12:30～14:00</td>
+                <td width="101">Meeting 1</td>
+                <td width="99">09:00～10:30</td>
+                <td width="98">Meeting 4</td>
+            </tr>
+            <tr>
+                <td width="96">14:00～14:30</td>
+                <td width="101">Exhibition</td>
+                <td width="99">10:30～11:00</td>
+                <td width="98">Lord's table meeting</td>
+            </tr>
+            <tr>
+                <td width="96">14:30～16:00</td>
+                <td width="101">Meeting 2</td>
+                <td width="99">11:00～12:30</td>
+                <td width="98">Meeting 5</td>
+            </tr>
+            <tr>
+                <td width="96">16:00～16:30</td>
+                <td width="101">Exhibition</td>
+                <td width="197" colspan="2" rowspan="2"><p>Note:</p> Children are not allowed to enter due to the restriction guidelines of the auditorium.</td>
+            </tr>
+            <tr>
+                <td width="96">16:30～18:00</td>
+                <td width="101">Meeting 3</td>
+            </tr>
+        </tbody>
+    </table>
+		<%= link_to "more...", "#", class: "strong pull-right home-schedule-more"  %>
+</div>
+
+<div class="row-fluid">
+	<div class="span4">
+		<a href="#">
+		<button class="clean-gray home-guide" type="button" style="width: 100%;height:200px;"><h1>Oversea Saints Registration</h1></button>
+		</a>
+	</div>
+	<div class="span4">
+		<a href="#">
+		<button class="clean-gray home-guide" type="button" style="width: 100%;height:200px;"><h1>海外華語聖徒報名</button>
+		</a>
+	</div>
+	<div class="span4">
+		<a href="#">
+		<button class="clean-gray home-guide" type="button" style="width: 100%;height:200px;"><h1>台灣眾召會報名</h1></button>
+		</a>
+	</div>
+</div>
+

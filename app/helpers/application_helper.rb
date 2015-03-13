@@ -7,4 +7,8 @@ module ApplicationHelper
 			"#{page_title} | #{base_title}"
 		end
 	end
+
+	def copyright_notice_year_range()
+		current_year = Time.now.year
+	end
 end
