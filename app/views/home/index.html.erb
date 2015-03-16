@@ -3,23 +3,6 @@
 	<h1>本次報名截止日期為十一月三十日</h1>
 	<p><%= link_to "瞭解更多", "#", class: "btn btn-primary btn-lg" %></p>
 </div>
-<div class="row">
-    <div class="col-md-4">
-        <a href="{{ url("session/chlang/en") }}">
-        <h1><button class="clean-gray" type="button"><h1><span class="glyphicon glyphicon-hand-up"></span> Oversea Registration</h1></button></h1>
-        </a>
-    </div>
-    <div class="col-md-4">
-        <a href="{{ url("session/chlang/zh") }}">
-        <h1><button class="clean-gray" type="button"><h1><span class="glyphicon glyphicon-hand-up"></span> 海外華語聖徒報名</h1></button></h1>
-        </a>
-    </div>
-    <div class="col-md-4">
-            <a href="{{ url("session/chlang/zh") }}">
-        <h1><button class="clean-gray" type="button"><h1><span class="glyphicon glyphicon-hand-right"></span> 台灣眾召會報名</h1></button></h1>
-        </a>
-    </div>
-</div>
 <div>
     <%= image_tag("homeICSC2015.jpg", alt: "ICSC", class:"image-responsive home-banner") %>
 </div>
@@ -29,7 +12,6 @@
               <p>We would like to announce that the 2015 International Chinese-speaking Conference will be held in Taipei, Taiwan from Saturday, February 21, 2015 through Lord’s Day, February 22, 2015. We would like to extend an invitation to all the churches and individuals to participate in this gathering.</p>
               <small class="pull-right"><cite title="Source Title">Living Stream Ministry and the church in Taipei</cite></small>
     </blockquote>
-
 	<table class="table table-bordered table-striped">
         <tbody>
             <tr>
@@ -73,4 +55,20 @@
     </table>
 		<%= link_to "more...", "#", class: "strong pull-right home-schedule-more"  %>
 </div>
-
+<div class="row">
+    <div class="col-md-4">
+        <a href="{{ url("session/chlang/en") }}">
+        <h1><button class="clean-gray" type="button"><h1><span class="glyphicon glyphicon-hand-up"></span> Oversea Registration</h1></button></h1>
+        </a>
+    </div>
+    <div class="col-md-4">
+        <a href="{{ url("session/chlang/zh") }}">
+        <h1><button class="clean-gray" type="button"><h1><span class="glyphicon glyphicon-hand-up"></span> 海外華語聖徒報名</h1></button></h1>
+        </a>
+    </div>
+    <div class="col-md-4">
+            <a href="https://www.chlife-stat.org" target="_blank">
+        <h1><button class="clean-gray" type="button"><h1><span class="glyphicon glyphicon-hand-right"></span> 台灣眾召會報名</h1></button></h1>
+        </a>
+    </div>
+</div>

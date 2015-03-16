@@ -1,20 +1,3 @@
-<!-- <header class="navbar navbar-fixed-top navbar-inverse">
-  <div class="container">
-    <%= link_to "2018 ICSC", root_path, id: "logo" %>
-    <nav>
-      <ul class="nav navbar-nav">
-        <li><%= link_to "Information",   root_path %></li>
-        <li><%= link_to "Announcement",   '#' %></li>
-        <li><%= link_to "Registration", '#' %></li>
-      	<li><%= link_to "Donate for ICSC", '#' %></li>
-      	<li><%= link_to "Contact US", '#' %></li>
-      </ul>
-      <ul class="nav navbar-nav pull-right">
-				<li><%= link_to "Sign in", "#" %></li>
-      </ul>
-    </nav>
-  </div>
-</header> -->
 <nav class="navbar navbar-fixed-top navbar-inverse">
   <div class="container-fluid container">
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -31,14 +14,18 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Information <span class="sr-only">(current)</span></a></li>
-        <li><a href="#">Announcement</a></li>
-        <li><a href="#">Registration</a></li>
-        <li><a href="#">Donate</a></li>
-        <li><a href="#">Contact us</a></li>
+        <li class="<%= 'active' if current_page?(root_path) %>">
+          <%= link_to root_path, :class => 'menu' do %>
+            Information <span class="sr-only">(current)</span>
+          <% end %>
+        </li>
+        <li class="<%= 'active' if current_page?(announcement_path) %>"><%= link_to 'Announcement', announcement_path %></li>
+        <li class="<%= 'active' if current_page?(registration_path) %>"><%= link_to 'Registration', registration_path %></li>
+        <li class="<%= 'active' if current_page?(donate_path) %>"><%= link_to 'Donate', donate_path, target:"_blank" %></li>
+        <li class="<%= 'active' if current_page?(contact_path) %>"><%= link_to 'Contact us', contact_path %></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a class="button btn-custom" href="#">Sign in</a></li>
+        <li class="<%= 'active' if current_page?(login_path) %>"><%= link_to 'Sign in', login_path %></li>
 <!--         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
