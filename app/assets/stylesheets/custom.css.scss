@@ -3,6 +3,7 @@
 @import "bootstrap";
 
 
+
 html {
 	overflow-y: scroll;
 }
@@ -164,4 +165,43 @@ button.clean-gray {
     -moz-box-shadow: inset 0 0 5px 2px #aaaaaa, 0 1px 0 0 #eeeeee;
     box-shadow: inset 0 0 5px 2px #aaaaaa, 0 1px 0 0 #eeeeee;
   }
+}
+
+$gray-medium-light: #eaeaea;
+
+@mixin box_sizing {
+  -moz-box-sizing:    border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing:         border-box;
+}
+
+/* miscellaneous */
+
+.debug_dump {
+  clear: both;
+  float: left;
+  width: 100%;
+  margin-top: 45px;
+  @include box_sizing;
+}
+
+/* Registration tips*/
+.registration-tips, .home-announcement {
+  margin-top: 10px;
+}
+
+/* Registration notes*/
+ol.registration-notes li {
+  font-size: 25px;
+  margin-top: 20px;
+}
+
+.form-group.required .control-label:after {
+  content:"*";
+  color:red;
+  position: absolute;
+  margin-left: 8px;
+  font-family: 'Glyphicons Halflings';
+  font-weight: normal;
+  font-size: 14px;
 }

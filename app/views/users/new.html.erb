@@ -1,0 +1,115 @@
+<% provide(:title, "Register new account") %>
+
+<div class="jumbotron registration-tips">
+	<h1>One church can only registration one account</h1>
+</div>
+<div class="row">
+	<div class="col-md-7">
+		<div class="panel panel-success">
+			<div class="panel-heading">Registration From</div>
+			<div class="panel-body">
+				<%= form_for @user, :html => {:class => 'form-horizontal'} do |f| %>
+					<fieldset>
+						<div class="form-group required">
+							<%= f.label :firstname, "First Name", class: "col-sm-3 control-label required" %>
+							<div class="col-sm-8">
+									<%= f.text_field :firstname, class: "form-control", placeholder: "ex: Tobias or 張", required: "true" %>
+							</div>
+						</div>
+						<div class="form-group  required">
+							<%= f.label :username, "Last Name", class: "col-sm-3 control-label" %>
+							<div class="col-sm-8">
+									<%= f.text_field :lastname, class: "form-control", placeholder: "ex Chang or 顯主", required: "true" %>
+							</div>
+						</div>
+						<div class="form-group  required">
+							<%= f.label :gender, "Gender", class: "col-sm-3 control-label" %>
+							<div class="col-sm-8">
+								<label>
+				         	<%= f.radio_button :gender, class: "btn btn-lg" %> Male
+				        </label>
+				        <label>
+				         	<%= f.radio_button :gender, class: "btn" %> Female
+				        </label>
+			        </div>
+		      	</div>
+						<div class="form-group  required">
+							<%= f.label :username, "Country", class: "col-sm-3 control-label" %>
+							<div class="col-sm-8">
+									<%= f.text_field :username, class: "form-control", placeholder: "ex: USA or 中國", required: "true" %>
+							</div>
+						</div>
+						<div class="form-group  required">
+							<%= f.label :username, "Church", class: "col-sm-3 control-label" %>
+							<div class="col-sm-8">
+									<%= f.text_field :username, class: "form-control", placeholder: "ex: Anaheim or 上海", required: "true" %>
+							</div>
+						</div>
+						<div class="form-group  required">
+							<%= f.label :username, "Eamil", class: "col-sm-3 control-label" %>
+							<div class="col-sm-8">
+									<%= f.text_field :username, class: "form-control", placeholder: "ex: lovelord@gmail.com", required: "true" %>
+							</div>
+						</div>
+						<div class="form-group">
+							<%= f.label :username, "Mobile", class: "col-sm-3 control-label" %>
+							<div class="col-sm-8">
+									<%= f.text_field :username, class: "form-control", placeholder: "ex: (886)912345678" %>
+							</div>
+						</div>
+						<div class="form-group">
+							<%= f.label :username, "Phone", class: "col-sm-3 control-label" %>
+							<div class="col-sm-8">
+									<%= f.text_field :username, class: "form-control", placeholder: "ex: (886)2-27575793" %>
+							</div>
+						</div>
+						<div class="form-group  required">
+							<%= f.label :username, "Username", class: "col-sm-3 control-label" %>
+							<div class="col-sm-8">
+									<%= f.text_field :username, class: "form-control", placeholder: "ex: icsc2015", required: "true" %>
+							</div>
+						</div>
+						<div class="form-group  required">
+							<%= f.label :username, "Password", class: "col-sm-3 control-label", required: "true" %>
+							<div class="col-sm-8">
+									<%= f.password_field :username, class: "form-control", placeholder: "Minimum length is 6", required: "true" %>
+							</div>
+						</div>
+						<div class="form-group  required">
+							<%= f.label :username, "Repeat Password", class: "col-sm-3 control-label" %>
+							<div class="col-sm-8">
+									<%= f.password_field :username, class: "form-control", placeholder: "Repeat your password" %>
+							</div>
+						</div>
+						<div>
+							<%= hidden_field_tag 'active', 'N' %>
+						</div>
+						<div class="form-group">
+							<div class="col-sm-offset-3 col-sm-3">
+									<%= f.submit "Create an user", class: "btn btn-lg btn-success" %>
+							</div>
+						</div>
+					</fieldset>
+				<% end %>
+			</div>
+		</div>
+	</div>
+	<div class="col-md-5">
+		<div class="panel panel-warning">
+			<div class="panel-heading">Notes</div>
+			<div class="panel-body">
+				<ol class="registration-notes">
+					<li>
+						Fill out the form aside with your contact information to create a corporate account representing your country or locality. (This account functions as a corporate account for a country or a locality. It is not for individual usage. )
+					</li>
+					<li>
+						Your account will be activated after we have verified your information.
+					</li>
+					<li>
+						Once we start processing your case, we will send you a notice confirming we have received your application.
+					</li>
+				</ol>
+			</div>
+		</div>
+	</div>
+</div>
