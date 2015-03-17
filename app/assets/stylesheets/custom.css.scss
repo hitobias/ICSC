@@ -205,3 +205,24 @@ ol.registration-notes li {
   font-weight: normal;
   font-size: 14px;
 }
+
+/*Create an user errors*/
+#error_explanation {
+  color: red;
+  ul {
+    color: red;
+    margin: 0 0 30px 0;
+  }
+}
+
+.field_with_errors {
+  @extend .has-error;
+  .form-control {
+    color: $state-danger-text;
+  }
+}
+
+/*alert alert-success alert-danger*/
+.alert, .alert-success, .alert-danger {
+    margin-top: 10px;
+} 

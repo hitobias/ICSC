@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'sessions/new'
+
   get 'users/new'
 
   get 'users/create'
@@ -11,7 +13,9 @@ Rails.application.routes.draw do
   get 'registration' => 'users#new'
   get 'donate'       => 'home#donate'
   get 'contact'      => 'home#contact'
-  get 'login'      => 'home#login'
+  get 'login'        => 'sessions#new'
+  post 'login'       => 'sessions#create'
+  get 'logout'    => 'sessions#destroy'
 
   resources :users
 
