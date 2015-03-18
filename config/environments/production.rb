@@ -20,6 +20,23 @@ Rails.application.configure do
   # NGINX, varnish or squid.
   # config.action_dispatch.rack_cache = true
 
+# Don't care if the mailer can't send.
+  config.action_mailer.raise_delivery_errors = true
+
+  # config.action_mailer.delivery_method = :test
+  host = "icsc.herokuapp.com"
+  config.action_mailer.default_url_options = { host: host }
+
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address:              'ssmtp.sendgrid.net',
+    port:                 587,
+    domain:               'icsc2018.org',
+    user_name:            ENV['SENDGRID_USERNAME'],
+    password:             ENV['SENDGRID_PASSWORD'],
+    authentication:       'plain',
+    enable_starttls_auto: true  }
+
   # Disable serving static files from the `/public` folder by default since
   # Apache or NGINX already handles this.
   config.serve_static_files = ENV['RAILS_SERVE_STATIC_FILES'].present?
