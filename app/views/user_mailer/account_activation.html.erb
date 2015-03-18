@@ -1,0 +1,8 @@
+<h1>ICSC account activation</h1>
+<p>
+	Dear brother/sister <%= @user.firstname %>
+</p>
+<p>
+  You have registed an account at icsc2018.org! Click on the link below to active your account:
+</p>
+<%= link_to "Activate link", edit_account_activation_url(@user.activation_token, @user.email ) %>

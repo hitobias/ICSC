@@ -14,7 +14,7 @@
 						<%= f.password_field :password, class: "form-control", tabindex:"2", required: "true" %>
 					</div>
 					<div class="checkbox">
-    				<label><input type="checkbox"> Remember me</label>
+    				<label><%= f.check_box :remember_me %> Remember me</label>
   				</div>
 					<div class="form-group">
 						<%= f.submit "Sign in", class: "btn btn-lg btn-success", tabindex:"3" %>
