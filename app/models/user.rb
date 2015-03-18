@@ -1,5 +1,8 @@
 class User < ActiveRecord::Base
-	validates :username, 	presence: true, length: { maximum: 50 }, uniqueness: { case_sensitive: false}
+	before_save :format_attribute
+	before_save :default_value
+
+	validates :username,  presence: true, length: { minimum: 5 }
 	validates :firstname, presence: true
 	validates :lastname, 	presence: true
 	validates :gender,		presence: true
@@ -10,6 +13,21 @@ class User < ActiveRecord::Base
 	validates :email,			presence: true, format: { with: VALID_EMAIL_REGEX }, uniqueness: { case_sensitive: false}
 
 	has_secure_password
-	validates :password, 	presence: { on: create}, length: { minimum: 6 }
-	validates_confirmation_of :password
+	validates :password, 	presence: { on: create }, length: { minimum: 6 }, confirmation: true
+	validates :password_confirmation, presence: true
+
+	private
+		def default_value
+			self.actived ||= "N"
+			self.role ||= "normal"
+		end
+
+		def format_attribute
+			self.username = self.username.downcase
+			self.firstname = self.firstname.strip.capitalize
+			self.lastname = self.lastname.strip.capitalize
+
+			self.email = self.email.downcase
+
+		end
 end

@@ -1,26 +1,23 @@
 <% provide(:title, "Register new account") %>
 <div class="row">
-	<div class="col-md-7">
+	<div class="col-md-5 col-md-offset-4" id="login-panel">
 		<div class="panel panel-success">
-			<div class="panel-heading">Registration From</div>
+			<div class="panel-heading">Sign in for application</div>
 			<div class="panel-body">
-				<%= form_for :session, url: login_path, :html => {:class => 'form-horizontal'} do |f| %>
+				<%= form_for :session, url: login_path do |f| %>
 					<div class="form-group">
-						<%= f.label :username, "Username", class: "col-sm-3 control-label" %>
-						<div class="col-sm-8">
-							<%= f.text_field :username, class: "form-control", placeholder: "ex: icsc2015", required: "true" %>
-						</div>
+						<%= f.label :login_field, "Username or Email" %>
+						<%= f.text_field :login_field, class: "form-control", autofocus:"true", tabindex:"1", autocapitalize:"off", required: "true" %>
 					</div>
 					<div class="form-group">
-						<%= f.label :password, "Password", class: "col-sm-3 control-label", required: "true" %>
-						<div class="col-sm-8">
-								<%= f.password_field :password, class: "form-control", placeholder: "Minimum length is 6", required: "true" %>
-						</div>
+						<%= f.label :password, "Password", required: "true" %> <span class="forgot-password">( <%= link_to 'forgot password?', "#" %> )</span>
+						<%= f.password_field :password, class: "form-control", tabindex:"2", required: "true" %>
 					</div>
+					<div class="checkbox">
+    				<label><input type="checkbox"> Remember me</label>
+  				</div>
 					<div class="form-group">
-						<div class="col-sm-offset-3 col-sm-3">
-								<%= f.submit "Log in", class: "btn btn-lg btn-success" %>
-						</div>
+						<%= f.submit "Sign in", class: "btn btn-lg btn-success", tabindex:"3" %>
 					</div>
 				<% end %>
 			</div>
