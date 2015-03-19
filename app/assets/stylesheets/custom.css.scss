@@ -51,12 +51,15 @@ p{
 /* header */
 #logo {
 	float: left;
-	margin-right: 10px;
+	margin-right: 10px; 
 	text-transform: uppercase; 
 	letter-spacing: -1px; 
 	padding-top: 9px; 
 	font-weight: bold;
-  font-size: 40px;
+  margin-top: 10px;
+  font-size: 35px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+
 }
 
 footer {
@@ -103,13 +106,6 @@ table tbody tr {
 		font-size: 20px;
 		height: 70px;
 	}
-}
-
-/*logo*/
-#logo {
-  margin-top: 10px;
-  font-size: 25px;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 /* navbar font*/
