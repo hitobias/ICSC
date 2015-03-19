@@ -6,11 +6,11 @@
 			<div class="panel-body">
 				<%= form_for :session, url: login_path do |f| %>
 					<div class="form-group">
-						<%= f.label :login_field, "Username or Email" %>
+						<%= f.label :login_field, "Username or Email" %><span class="not-registered"> <%= link_to 'New user?', registration_path %> </span>
 						<%= f.text_field :login_field, class: "form-control", autofocus:"true", tabindex:"1", autocapitalize:"off", required: "true" %>
 					</div>
 					<div class="form-group">
-						<%= f.label :password, "Password", required: "true" %> <span class="forgot-password">( <%= link_to 'forgot password?', "#" %> )</span>
+						<%= f.label :password, "Password", required: "true" %> <span class="forgot-password"> <%= link_to 'Forgot password?', new_password_reset_path %> </span>
 						<%= f.password_field :password, class: "form-control", tabindex:"2", required: "true" %>
 					</div>
 					<div class="checkbox">

@@ -180,6 +180,7 @@ $gray-medium-light: #eaeaea;
 /* Registration tips*/
 .registration-tips, .home-announcement {
   margin-top: 10px;
+  font-size: 30px;
 }
 
 /* Registration notes*/
@@ -220,11 +221,18 @@ ol.registration-notes li {
 } 
 
 /* Login Panel*/
-#login-panel {
+#login-panel, #forget-password-panel {
   margin-top: 50px;
 }
 
-/*forgot password*/
-.forgot-password {
+/* panel heading*/
+.panel-heading {
+  font-size: 20px;
   font-weight: bold;
+}
+
+/*forgot password*/
+.forgot-password, .not-registered {
+  font-weight: bold;
+  float: right;
 }
