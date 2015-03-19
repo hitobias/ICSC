@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-	attr_accessor :remember_token, :activation_token
+	attr_accessor :remember_token, :activation_token, :reset_token
 	before_create :create_activation_digest
 	before_save :format_attribute
 	before_save :default_value
@@ -36,9 +36,32 @@ class User < ActiveRecord::Base
 		update_attribute(:remember_digest, nil)
 	end
 
+	def activate
+		update_attribute(:activated, true)
+		update_attribute(:activated_at, Time.zone.now)
+	end
+
+	def send_activation_email
+		UserMailer.account_activation(self).deliver_now
+	end
+
 	def authenticated?(remember_token)
 		return false if remember_digest.nil?
 		BCrypt::Password.new(remember_digest).is_password?(remember_token)
+	end
+
+	def create_reset_digest
+		self.reset_token = User.new_token
+		update_attribute(:reset_digest, User.digest(reset_token))
+		update_attribute(:reset_sent_at, Time.zone.now)
+	end
+
+	def send_password_reset_email
+		UserMailer.password_reset(self).deliver_now
+	end
+
+	def password_reset_expired?
+		reset_sent_at < 24.hours.ago
 	end
 
 	private
