@@ -7,13 +7,13 @@ class SessionsController < ApplicationController
     user ||= User.find_by(username: params[:session][:login_field])
 
   	if user && user.authenticate(params[:session][:password])
-      if user.actived? && user.role == "normal"
+      if user.activated? && user.role == "normal"
         log_in user
         params[:session][:remember_me] == "1" ? remember(user) : forget(user)
         redirect_to user
       else
         flash.now[:danger] = "Your account was not actived, please check your email."
-        render 'new'
+        redirect_to root_path
       end
 
   	else
@@ -23,7 +23,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-  	log_out
+  	log_out if logged_in?
   	redirect_to root_path
   end
 end

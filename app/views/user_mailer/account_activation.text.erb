@@ -1,4 +1,4 @@
 Dear brother/sister <%= @user.firstname %>
 	
   You have registed an account at icsc2018.org! Click on the link below to active your account:
-  <%= edit_account_activation_url(@user.activation_token, @user.email ) %>
+  <%= edit_account_activation_url(@user.activation_token, email: @user.email ) %>

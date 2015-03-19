@@ -45,9 +45,10 @@ class User < ActiveRecord::Base
 		UserMailer.account_activation(self).deliver_now
 	end
 
-	def authenticated?(remember_token)
-		return false if remember_digest.nil?
-		BCrypt::Password.new(remember_digest).is_password?(remember_token)
+	def authenticated?(attribute, token)
+		digest = send("#{attribute}_digest")
+		return false if digest.nil?
+		BCrypt::Password.new(digest).is_password?(token)
 	end
 
 	def create_reset_digest
@@ -71,7 +72,7 @@ class User < ActiveRecord::Base
 		end
 
 		def default_value
-			self.actived_at = nil
+			self.activated_at = nil
 			self.role ||= "normal"
 		end
 
