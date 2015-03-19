@@ -76,6 +76,9 @@
     }
 }
 
+ // Portrait tablet to landscape and desktop
+@media (min-width: 768px) and (max-width: 980px) {  }
+
 @media (max-width: 550px) {
     .btn-navbar {
         display: block;
