@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 
   get 'announcement' => 'home#announcement'
   get 'registration' => 'users#new'
-  get 'donate'       => 'home#donate'
+  # get 'donate'       => 'home#donate'
   get 'contact'      => 'home#contact'
   get 'login'        => 'sessions#new'
   post 'login'       => 'sessions#create'
