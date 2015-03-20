@@ -23,7 +23,7 @@
         <% if logged_in? %>
         <% else %>
           <li class="<%= 'active' if current_page?(registration_path) %>"><%= link_to 'Registration', registration_path %></li>
-          <li class="<%= 'active' if current_page?(contact_path) %>"><%= link_to 'Contact us', contact_path %></li>
+<!--           <li class="<%= 'active' if current_page?(contact_path) %>"><%= link_to 'Contact us', contact_path %></li> -->
         <% end %>
       </ul>
       <% if logged_in? %>

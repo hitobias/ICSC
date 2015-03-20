@@ -72,7 +72,6 @@ class User < ActiveRecord::Base
 		end
 
 		def default_value
-			self.activated_at = nil
 			self.role ||= "normal"
 		end
 
@@ -80,7 +79,6 @@ class User < ActiveRecord::Base
 			self.username = self.username.downcase
 			self.firstname = self.firstname.strip.capitalize
 			self.lastname = self.lastname.strip.capitalize
-
 			self.email = self.email.downcase
 		end
 end
