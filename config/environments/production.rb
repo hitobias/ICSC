@@ -29,11 +29,11 @@ Rails.application.configure do
 
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    address:              'ssmtp.sendgrid.net',
+    address:              'smtp.gmail.com',
     port:                 587,
-    domain:               'icsc2015.org',
-    user_name:            ENV['SENDGRID_USERNAME'],
-    password:             ENV['SENDGRID_PASSWORD'],
+    domain:               'gmail.com',
+    user_name:            'icsc2015.org@gmail.com',
+    password:             '2015gospel',
     authentication:       'plain',
     enable_starttls_auto: true  }
 
