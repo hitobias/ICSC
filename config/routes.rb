@@ -5,17 +5,11 @@ Rails.application.routes.draw do
 
   get 'sessions/new'
 
-  get 'users/new'
-
-  get 'users/create'
-
-  get 'users/show'
-
   root 'home#index'
 
   get 'announcement' => 'home#announcement'
   get 'registration' => 'users#new'
-  # get 'donate'       => 'home#donate'
+  get 'tours'       => 'home#tours'
   get 'contact'      => 'home#contact'
   get 'login'        => 'sessions#new'
   post 'login'       => 'sessions#create'

@@ -5,7 +5,7 @@ class HomeController < ApplicationController
   def announcement
   end
 
-  def registration
+  def tours
   end
 
   def donate
