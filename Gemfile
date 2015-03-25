@@ -30,7 +30,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem "bcrypt-ruby", '~> 3.1.5', :require => "bcrypt"
 # Use Unicorn as the app server
 # gem 'unicorn'
-
+gem 'pg', '0.17.1'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
@@ -43,13 +43,19 @@ group :development, :test do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
-  
-  # Use sqlite3 as the database for Active Record
-	gem 'sqlite3'
+  gem 'rspec-rails'
+  gem 'factory_girl_rails'
 end
 
 group :production do
-	gem 'pg',							'0.17.1'
 	gem 'rails_12factor', '0.0.2'
+end
+
+group :test do
+  gem "faker", "~> 1.4.3"
+  gem "capybara", "~> 2.4.3"
+  gem "database_cleaner", "~> 1.3.0"
+  gem "launchy", "~> 2.4.2"
+  gem "selenium-webdriver", "~> 2.43.0"
 end
 
