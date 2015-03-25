@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
       if user.activated? && user.role == "normal"
         log_in user
         params[:session][:remember_me] == "1" ? remember(user) : forget(user)
-        redirect_to user
+        redirect_to members_new_path
       else
         flash.now[:danger] = "Your account was not actived, please check your email."
         redirect_to root_path

@@ -1,4 +1,16 @@
 Rails.application.routes.draw do
+  get 'members/new'
+
+  get 'members/create'
+
+  get 'members/index'
+
+  get 'members/edit'
+
+  get 'members/update'
+
+  get 'members/destroy'
+
   get 'password_resets/new'
 
   get 'password_resets/edit'
@@ -17,8 +29,13 @@ Rails.application.routes.draw do
 
 
   resources :users
+  resources :members
+  resources :groups, only: [:edit, :update, :destroy]
+  
+  
   resources :account_activations, only: [:edit]
   resources :password_resets,     only: [:index, :new, :create, :edit, :update]
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
