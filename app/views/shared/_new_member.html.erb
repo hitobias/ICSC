@@ -1,19 +1,8 @@
-<% provide(:title, "Application page") %>
-<div>
-	<h1>特會報名</h1>
+<% provide(:title, "Single application") %>
+<div class="jumbotron registration-tips">
+	One church can only registration one account
 </div>
-
-<div>
-	<ul class="nav nav-tabs">
-		<li role="presentation" class="active"><a href="#aaa" data-toggle="tab">單個報名</a></li>
-		<li role="presentation"><a href="#bbb" data-toggle="tab">團體報名</a></li>
-		<li role="presentation"><a href="#ccc" data-toggle="tab">繳納款項</a></li>
-		<li role="presentation"><a href="#ddd" data-toggle="tab">報名資料確認</a></li>
-	</ul>
-</div>
-<div class="tab-content" id="tabs">
-	<div id="aaa" class="application-page">
-		<div class="row">
+<div class="row">
 	<div class="col-md-7">
 		<div class="panel panel-success">
 			<div class="panel-heading">Single application From</div>
@@ -70,24 +59,12 @@
 						</div>
 						<div class="form-group">
 							<div class="col-sm-offset-3 col-sm-3">
-									<%= f.submit "Submit", class: "btn btn-lg btn-success" %>
+									<%= f.submit "Create an user", class: "btn btn-lg btn-success" %>
 							</div>
 						</div>
 					</fieldset>
 				<% end %>
 			</div>
 		</div>
-	</div>
-</div>
-
-	</div>
-	<div id="bbb" class="application-page">
-		group application
-	</div>
-	<div id="ccc" class="application-page">
-		donate application	
-	</div>
-	<div id="ddd" class="application-page">
-		confirm application	
 	</div>
 </div>

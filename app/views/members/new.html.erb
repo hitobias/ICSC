@@ -1,30 +1,32 @@
 <% provide(:title, "Single application") %>
-<div class="jumbotron registration-tips">
-	One church can only registration one account
-</div>
 <div class="row">
-	<div class="col-md-7">
+	<div class="col-md-8 col-md-offset-2">
 		<div class="panel panel-success">
-			<div class="panel-heading">Registration From</div>
+			<div class="panel-heading">Single application From</div>
 			<div class="panel-body">
 				<%= form_for @member, :html => {:class => 'form-horizontal'} do |f| %>
-<!-- 					<%= render 'shared/error_messages' %> -->
 					<fieldset>
 						<div class="form-group required">
 							<%= f.label :firstname, "First Name", class: "col-sm-3 control-label required" %>
-							<div class="col-sm-8">
+							<div class="col-sm-5">
 									<%= f.text_field :firstname, class: "form-control", placeholder: "ex: Tobias or 張", autofocus:"true", required: "true" %>
 							</div>
 						</div>
 						<div class="form-group  required">
 							<%= f.label :lastname, "Last Name", class: "col-sm-3 control-label" %>
-							<div class="col-sm-8">
+							<div class="col-sm-5">
 									<%= f.text_field :lastname, class: "form-control", placeholder: "ex Chang or 顯主", required: "true" %>
+							</div>
+						</div>
+						<div class="form-group  required">
+							<%= f.label :chinese_name, "Chinese Name", class: "col-sm-3 control-label" %>
+							<div class="col-sm-5">
+									<%= f.text_field :chinese_name, class: "form-control", placeholder: "ex Chang or 顯主", required: "true" %>
 							</div>
 						</div>
 						<div class="form-group required">
 							<%= f.label :gender, "Gender", class: "col-sm-3 control-label" %>
-							<div class="col-sm-8">
+							<div class="col-sm-5">
 								<label class="radio-inline">
 				         	<%= f.radio_button :gender, "M" %> Male
 				        </label>
@@ -33,56 +35,122 @@
 				        </label>
 			        </div>
 		      	</div>
+		      	<div class="form-group">
+							<%= f.label :age, "Age", class: "col-sm-3 control-label" %>
+							<div class="col-sm-5">
+									<%= f.text_field :age, class: "form-control", placeholder: "ex: USA or 中國", required: "true" %>
+							</div>
+						</div>
 						<div class="form-group  required">
 							<%= f.label :country, "Country", class: "col-sm-3 control-label" %>
-							<div class="col-sm-8">
+							<div class="col-sm-5">
 									<%= f.text_field :country, class: "form-control", placeholder: "ex: USA or 中國", required: "true" %>
 							</div>
 						</div>
 						<div class="form-group  required">
 							<%= f.label :church, "Church", class: "col-sm-3 control-label" %>
-							<div class="col-sm-8">
+							<div class="col-sm-5">
 									<%= f.text_field :church, class: "form-control", placeholder: "ex: Anaheim or 上海", required: "true" %>
 							</div>
 						</div>
 						<div class="form-group  required">
 							<%= f.label :email, "Email", class: "col-sm-3 control-label" %>
-							<div class="col-sm-8">
+							<div class="col-sm-5">
 									<%= f.text_field :email, class: "form-control", placeholder: "ex: lovelord@gmail.com", required: "true" %>
 							</div>
 						</div>
-						
+						<div class="form-group required">
+							<%= f.label :pick_up, "Need pick up", class: "col-sm-3 control-label" %>
+							<div class="col-sm-5">
+								<label class="radio-inline">
+				         	<%= f.radio_button :pick_up, "Y", checked: "checked" %> Yes
+				        </label>
+				        <label class="radio-inline">
+				         	<%= f.radio_button :pick_up, "N" %> No
+				        </label>
+			        </div>
+		      	</div>
+		      	<div class="arrived_attrbutes">
+		      		<div class="form-group">
+								<%= f.label :arrvied_date, "Arrived date", class: "col-sm-3 control-label" %>
+								<div class="col-sm-5">
+										<%= f.date_field :arrived_date, class: "form-control", placeholder: "ex: lovelord@gmail.com", required: "true" %>
+								</div>
+							</div>
+							<div class="form-group">
+								<%= f.label :arrvied_time, "Arrived time", class: "col-sm-3 control-label" %>
+								<div class="col-sm-5">
+										<%= f.text_field :arrived_time, class: "form-control", placeholder: "ex: 21:30", required: "true" %>
+								</div>
+							</div>
+							<div class="form-group">
+								<%= f.label :arrvied_airport, "Arrived airport", class: "col-sm-3 control-label" %>
+								<div class="col-sm-5">
+										<%= f.text_field :arrived_airport, class: "form-control", placeholder: "ex: TPE T1", required: "true" %>
+								</div>
+							</div>
+							<div class="form-group">
+								<%= f.label :arrvied_flight_no, "Arrived flight NO.", class: "col-sm-3 control-label" %>
+								<div class="col-sm-5">
+										<%= f.text_field :arrived_flight_no, class: "form-control", placeholder: "ex: 21:30", required: "true" %>
+								</div>
+							</div>
+		      	</div>
+
+						<div class="form-group required">
+							<%= f.label :drop_off, "Need drop off", class: "col-sm-3 control-label" %>
+							<div class="col-sm-5">
+								<label class="radio-inline">
+				         	<%= f.radio_button :drop_off, "Y", checked: "checked" %> Yes
+				        </label>
+				        <label class="radio-inline">
+				         	<%= f.radio_button :drop_off, "N" %> No
+				        </label>
+			        </div>
+		      	</div>
+		      	<div class="form-group">
+							<%= f.label :departed_date, "Departed date", class: "col-sm-3 control-label" %>
+							<div class="col-sm-5">
+									<%= f.date_field :departed_date, class: "form-control", required: "true" %>
+							</div>
+						</div>
+						<div class="form-group">
+							<%= f.label :departed_time, "Departed time", class: "col-sm-3 control-label" %>
+							<div class="col-sm-5">
+									<%= f.text_field :departed_time, class: "form-control", placeholder: "ex: 21:30", required: "true" %>
+							</div>
+						</div>
+						<div class="form-group">
+							<%= f.label :departed_airport, "Departed airport", class: "col-sm-3 control-label" %>
+							<div class="col-sm-5">
+									<%= f.text_field :departed_airport, class: "form-control", placeholder: "ex: TPE T1", required: "true" %>
+							</div>
+						</div>
+						<div class="form-group">
+							<%= f.label :departed_flight_no, "Departed flight NO.", class: "col-sm-3 control-label" %>
+							<div class="col-sm-5">
+									<%= f.text_field :departed_flight_no, class: "form-control", placeholder: "ex: 21:30", required: "true" %>
+							</div>
+						</div>
+						<div class="form-group">
+							<%= f.label :conference_option, "Conference option", class: "col-sm-3 control-label" %>
+							<div class="col-sm-5">
+									<%= f.collection_select(:conference_option, ConferenceOption.all, :short_code, :option_name, {prompt: "Select a option"}, {class: "form-control"}) %>
+							</div>
+						</div>
 						<div class="form-group">
 							<%= f.label :comments, "Comments", class: "col-sm-3 control-label" %>
-							<div class="col-sm-8">
-									<%= f.text_field :conference_option, class: "form-control", placeholder: "Comments" %>
+							<div class="col-sm-5">
+									<%= f.text_area :conference_option, class: "form-control", placeholder: "Comments" %>
 							</div>
 						</div>
 						<div class="form-group">
 							<div class="col-sm-offset-3 col-sm-3">
-									<%= f.submit "Create an user", class: "btn btn-lg btn-success" %>
+									<%= f.submit "Submit", class: "btn btn-lg btn-success" %>
 							</div>
 						</div>
 					</fieldset>
 				<% end %>
-			</div>
-		</div>
-	</div>
-	<div class="col-md-5">
-		<div class="panel panel-warning">
-			<div class="panel-heading">Notes</div>
-			<div class="panel-body">
-				<ol class="registration-notes">
-					<li>
-						Fill out the form aside with your contact information to create a corporate account representing your country or locality. (This account functions as a corporate account for a country or a locality. It is not for individual usage. )
-					</li>
-					<li>
-						Your account will be activated after we have verified your information.
-					</li>
-					<li>
-						Once we start processing your case, we will send you a notice confirming we have received your application.
-					</li>
-				</ol>
 			</div>
 		</div>
 	</div>

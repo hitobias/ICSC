@@ -11,7 +11,7 @@ class CreateMembers < ActiveRecord::Migration
       t.string :church
       t.boolean :pick_up
       t.date :arrived_date
-      t.time :arrvied_time
+      t.time :arrived_time
       t.string :arrived_airport
       t.string :arrived_flight_no
       t.boolean :drop_off

@@ -11,10 +11,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150325052943) do
+ActiveRecord::Schema.define(version: 20150325134451) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "conference_options", force: :cascade do |t|
+    t.string   "option_name"
+    t.integer  "donate_amount"
+    t.string   "short_code"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.integer  "conference_id"
+  end
+
+  add_index "conference_options", ["conference_id"], name: "index_conference_options_on_conference_id", using: :btree
+
+  create_table "conferences", force: :cascade do |t|
+    t.string   "name"
+    t.date     "deadline"
+    t.text     "announcement"
+    t.boolean  "enabled"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
 
   create_table "groups", force: :cascade do |t|
     t.integer  "no_of_applicants"
@@ -38,7 +58,7 @@ ActiveRecord::Schema.define(version: 20150325052943) do
     t.string   "church"
     t.boolean  "pick_up"
     t.date     "arrived_date"
-    t.time     "arrvied_time"
+    t.time     "arrived_time"
     t.string   "arrived_airport"
     t.string   "arrived_flight_no"
     t.boolean  "drop_off"
@@ -55,6 +75,7 @@ ActiveRecord::Schema.define(version: 20150325052943) do
     t.datetime "updated_at",                         null: false
     t.string   "email"
     t.integer  "group_id"
+    t.integer  "age"
   end
 
   add_index "members", ["group_id"], name: "index_members_on_group_id", using: :btree
@@ -84,6 +105,7 @@ ActiveRecord::Schema.define(version: 20150325052943) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
 
+  add_foreign_key "conference_options", "conferences"
   add_foreign_key "groups", "users"
   add_foreign_key "members", "groups"
 end

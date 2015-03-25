@@ -1,4 +1,28 @@
 Rails.application.routes.draw do
+  get 'conference_options/new'
+
+  get 'conference_options/create'
+
+  get 'conference_options/index'
+
+  get 'conference_options/show'
+
+  get 'conference_options/edit'
+
+  get 'conference_options/update'
+
+  get 'conferences/new'
+
+  get 'conferences/create'
+
+  get 'conferences/edit'
+
+  get 'conferences/update'
+
+  get 'conferences/show'
+
+  get 'conferences/index'
+
   get 'members/new'
 
   get 'members/create'
@@ -31,7 +55,8 @@ Rails.application.routes.draw do
   resources :users
   resources :members
   resources :groups, only: [:edit, :update, :destroy]
-  
+  resources :conferences
+  resources :conference_options
   
   resources :account_activations, only: [:edit]
   resources :password_resets,     only: [:index, :new, :create, :edit, :update]

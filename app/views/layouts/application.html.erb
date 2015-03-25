@@ -12,6 +12,12 @@
 	</head>
 	<body>
 		<%= render 'layouts/header' %>
+		<% if logged_in? && current_user.role == "normal" %>
+			<%= render 'layouts/application_navbar' %>
+		<% elsif logged_in? && current_user.role == "root"
+			 %>
+			 <%= render 'layouts/root_navbar' %>
+		<% end %>
 	  <div class="container">
 	  	<% flash.each do | message_type, message | %>
 	  		<div class="alert alert-<%= message_type %>"><%= message %></div>

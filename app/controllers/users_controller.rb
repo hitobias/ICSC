@@ -19,6 +19,7 @@ class UsersController < ApplicationController
   end
 
   def show
+      redirect_to new_member_path
   end
 
   private
