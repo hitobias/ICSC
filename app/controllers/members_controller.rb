@@ -30,7 +30,7 @@ class MembersController < ApplicationController
 
   private
     def member_params
-      params.require(:member).permit(:firstname, :lastname, :gender, :country, :church, :email, :conference_option)
+      params.require(:member).permit(:firstname, :lastname, :chinese_name, :gender, :age, :country, :church, :pick_up, :arrived_date, :arrived_time, :arrived_airport, :arrived_flight_no, :drop_off, :departed_date, :departed_time, :departed_airport, :departed_flight_no, :conference_option, :comments)
     end
 
     def set_group

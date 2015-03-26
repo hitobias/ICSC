@@ -9,7 +9,7 @@
 			<div class="panel-heading">Registration From</div>
 			<div class="panel-body">
 				<%= form_for @user, :html => {:class => 'form-horizontal'} do |f| %>
-					<%= render 'shared/error_messages' %>
+					<%= render 'shared/user_error_messages' %>
 					<fieldset>
 						<div class="form-group required">
 							<%= f.label :firstname, "First Name", class: "col-sm-3 control-label required" %>

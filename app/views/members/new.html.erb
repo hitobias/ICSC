@@ -1,10 +1,11 @@
 <% provide(:title, "Single application") %>
 <div class="row">
-	<div class="col-md-8 col-md-offset-2">
+	<div class="col-md-8 col-md-offset-2" id="single-application-form">
 		<div class="panel panel-success">
 			<div class="panel-heading">Single application From</div>
 			<div class="panel-body">
 				<%= form_for @member, :html => {:class => 'form-horizontal'} do |f| %>
+					<%= render 'shared/member_error_messages' %>
 					<fieldset>
 						<div class="form-group required">
 							<%= f.label :firstname, "First Name", class: "col-sm-3 control-label required" %>
@@ -18,7 +19,7 @@
 									<%= f.text_field :lastname, class: "form-control", placeholder: "ex Chang or 顯主", required: "true" %>
 							</div>
 						</div>
-						<div class="form-group  required">
+						<div class="form-group">
 							<%= f.label :chinese_name, "Chinese Name", class: "col-sm-3 control-label" %>
 							<div class="col-sm-5">
 									<%= f.text_field :chinese_name, class: "form-control", placeholder: "ex Chang or 顯主", required: "true" %>
@@ -53,7 +54,7 @@
 									<%= f.text_field :church, class: "form-control", placeholder: "ex: Anaheim or 上海", required: "true" %>
 							</div>
 						</div>
-						<div class="form-group  required">
+						<div class="form-group">
 							<%= f.label :email, "Email", class: "col-sm-3 control-label" %>
 							<div class="col-sm-5">
 									<%= f.text_field :email, class: "form-control", placeholder: "ex: lovelord@gmail.com", required: "true" %>
@@ -74,25 +75,25 @@
 		      		<div class="form-group">
 								<%= f.label :arrvied_date, "Arrived date", class: "col-sm-3 control-label" %>
 								<div class="col-sm-5">
-										<%= f.date_field :arrived_date, class: "form-control", placeholder: "ex: lovelord@gmail.com", required: "true" %>
+										<%= f.date_field :arrived_date, class: "form-control" %>
 								</div>
 							</div>
 							<div class="form-group">
 								<%= f.label :arrvied_time, "Arrived time", class: "col-sm-3 control-label" %>
 								<div class="col-sm-5">
-										<%= f.text_field :arrived_time, class: "form-control", placeholder: "ex: 21:30", required: "true" %>
+										<%= f.text_field :arrived_time, class: "form-control", placeholder: "ex: 21:30" %>
 								</div>
 							</div>
 							<div class="form-group">
 								<%= f.label :arrvied_airport, "Arrived airport", class: "col-sm-3 control-label" %>
 								<div class="col-sm-5">
-										<%= f.text_field :arrived_airport, class: "form-control", placeholder: "ex: TPE T1", required: "true" %>
+										<%= f.text_field :arrived_airport, class: "form-control", placeholder: "ex: TPE T1" %>
 								</div>
 							</div>
 							<div class="form-group">
 								<%= f.label :arrvied_flight_no, "Arrived flight NO.", class: "col-sm-3 control-label" %>
 								<div class="col-sm-5">
-										<%= f.text_field :arrived_flight_no, class: "form-control", placeholder: "ex: 21:30", required: "true" %>
+										<%= f.text_field :arrived_flight_no, class: "form-control", placeholder: "ex: CX451" %>
 								</div>
 							</div>
 		      	</div>
@@ -111,25 +112,25 @@
 		      	<div class="form-group">
 							<%= f.label :departed_date, "Departed date", class: "col-sm-3 control-label" %>
 							<div class="col-sm-5">
-									<%= f.date_field :departed_date, class: "form-control", required: "true" %>
+									<%= f.date_field :departed_date, class: "form-control" %>
 							</div>
 						</div>
 						<div class="form-group">
 							<%= f.label :departed_time, "Departed time", class: "col-sm-3 control-label" %>
 							<div class="col-sm-5">
-									<%= f.text_field :departed_time, class: "form-control", placeholder: "ex: 21:30", required: "true" %>
+									<%= f.text_field :departed_time, class: "form-control", placeholder: "ex: 21:30" %>
 							</div>
 						</div>
 						<div class="form-group">
 							<%= f.label :departed_airport, "Departed airport", class: "col-sm-3 control-label" %>
 							<div class="col-sm-5">
-									<%= f.text_field :departed_airport, class: "form-control", placeholder: "ex: TPE T1", required: "true" %>
+									<%= f.text_field :departed_airport, class: "form-control", placeholder: "ex: TPE T1" %>
 							</div>
 						</div>
 						<div class="form-group">
 							<%= f.label :departed_flight_no, "Departed flight NO.", class: "col-sm-3 control-label" %>
 							<div class="col-sm-5">
-									<%= f.text_field :departed_flight_no, class: "form-control", placeholder: "ex: 21:30", required: "true" %>
+									<%= f.text_field :departed_flight_no, class: "form-control", placeholder: "ex: CX450" %>
 							</div>
 						</div>
 						<div class="form-group">
@@ -141,7 +142,7 @@
 						<div class="form-group">
 							<%= f.label :comments, "Comments", class: "col-sm-3 control-label" %>
 							<div class="col-sm-5">
-									<%= f.text_area :conference_option, class: "form-control", placeholder: "Comments" %>
+									<%= f.text_area :comments, class: "form-control", placeholder: "Comments" %>
 							</div>
 						</div>
 						<div class="form-group">

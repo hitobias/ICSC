@@ -1,0 +1,13 @@
+<% if @member.errors.any? %>
+	<div id="error_explanation">
+		<div class="alert alert-danger">
+			Your application contains <%= pluralize(@member.errors.count, "error") %>.
+		</div>
+		<ul>
+			<% @member.errors.full_messages.each do |msg| %>
+			<li><%= msg %></li>
+			<% end %>
+		</ul>
+	</div>
+	<hr/>
+<% end %>

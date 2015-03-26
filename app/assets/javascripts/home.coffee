@@ -3,8 +3,6 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 $(document).ready ->
 	activeTab('aaa')
-	alert "dfasdf"
 
 activeTab(tab) ->
 	$('.nav-tabs a[href="#' + tab + '"]').tab('show')
-
