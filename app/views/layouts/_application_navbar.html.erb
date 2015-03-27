@@ -3,17 +3,14 @@
 	<h1>報名流程</h1>
 </div>
 <div class="btn-group btn-group-justified application-navbar" role="group" aria-label="...">
-	<div class="btn-group" role="group">
-    <%= link_to "單個報名", new_member_path, class: "btn btn-info btn-lg" %>
+  <div class="btn-group" role="group">
+    <%= link_to "1-報名", applications_path, class: "btn btn-primary btn-lg" %>
   </div>
   <div class="btn-group" role="group">
-    <%= link_to "團體報名", new_member_path, class: "btn btn-primary btn-lg" %>
+    <%= link_to "2-繳費", donations_path, class: "btn btn-warning btn-lg" %>
   </div>
   <div class="btn-group" role="group">
-    <%= link_to "繳費", new_member_path, class: "btn btn-warning btn-lg" %>
-  </div>
-  <div class="btn-group" role="group">
-    <%= link_to "確認報名資料", new_member_path, class: "btn btn-success btn-lg" %>
+    <%= link_to "3-確認報名資料", members_path, class: "btn btn-success btn-lg" %>
   </div>
 </div>
 </div>

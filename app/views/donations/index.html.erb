@@ -1,0 +1,31 @@
+<div id="donations" class="table-responsive">
+	<%= will_paginate @groups %>
+	<table class="table table-hover table-condensed table-striped table-bordered">
+		<thead>
+			<tr>
+				<th>組別</th>
+				<th>人數</th>
+				<th>繳費金額</th>
+				<th>刪除</th>
+				<th>繳費狀態</th>
+			</tr>
+		</thead>
+		<tbody>
+			<% @groups.each do |group| %>
+					<tr id="group_<%= group.id %>">
+						<td><%= group.id %></td>
+						<td><%= link_to group.no_of_applicants, "#", remote: true  %></td>
+						<td><%= group.donate_amount %></td>
+
+						<td><%= link_to '刪除', group_path(group), method: :delete, data: {confirm: "確認刪除?"}, remote: true  %></td>
+						<% if group.edible %>
+							<td><%= link_to "繳費", "#" %></td>
+						<% else %>
+							<td>已完成繳費</td>
+						<% end %>
+					</tr>
+				<% end %>
+			</tbody>
+	</table>
+	<%= will_paginate @groups %>
+</div>

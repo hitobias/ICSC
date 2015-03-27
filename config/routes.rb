@@ -1,4 +1,16 @@
 Rails.application.routes.draw do
+  get 'donations/index'
+
+  get 'donations/new'
+
+  get 'donations/create'
+
+  get 'group_applications/index'
+
+  get 'group_applications/new'
+
+  get 'group_applications/update'
+
   get 'conference_options/new'
 
   get 'conference_options/create'
@@ -45,18 +57,20 @@ Rails.application.routes.draw do
 
   get 'announcement' => 'home#announcement'
   get 'registration' => 'users#new'
-  get 'tours'       => 'home#tours'
+  get 'tours'        => 'home#tours'
   get 'contact'      => 'home#contact'
   get 'login'        => 'sessions#new'
   post 'login'       => 'sessions#create'
-  get 'logout'    => 'sessions#destroy'
-
+  get 'logout'       => 'sessions#destroy'
+  get 'applications' => 'group_applications#index'
+  get 'donations'    => 'donations#index'
 
   resources :users
   resources :members
   resources :groups, only: [:edit, :update, :destroy]
   resources :conferences
   resources :conference_options
+  resources :group_applications,  only: [:index, :new, :create]
   
   resources :account_activations, only: [:edit]
   resources :password_resets,     only: [:index, :new, :create, :edit, :update]

@@ -1,0 +1,12 @@
+<tbody>
+	<tr>
+		<td><%= member.name %></td>
+		<td><%= member.gender %></td>
+		<td><%= member.pick_up %></td>
+		<td><%= member.hospitality %></td>
+		<td><%= member.conference_option %></td>
+		<td><%= member.donated %></td>
+		<td><%= link_to '查看', member_path(member), remote: true  %></td>
+		<td><%= link_to '編輯', edit_member_path(member), remote: true  %></td>
+	</tr>
+</tbody>

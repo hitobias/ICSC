@@ -99,7 +99,7 @@ footer {
 }
 
 // home table th, td text-align center
-table tbody tr {
+#meetings-info tbody tr {
 	th, td {
 		text-align: center;
 		vertical-align: middle;
@@ -221,7 +221,7 @@ ol.registration-notes li {
 } 
 
 /* Login Panel*/
-#login-panel, #forget-password-panel, #reset-password-panel, #single-application-form {
+#login-panel, #forget-password-panel, #reset-password-panel, #single-application-form, #single-application-panel, #group-application-panel {
   margin-top: 50px;
 }
 
@@ -241,4 +241,18 @@ ol.registration-notes li {
   height: 100px;
   font-weight: bold;
   font-size: 40px;
+}
+
+#applications-divider {
+  border-right: 1px solid #D8D8D8;
+  height: 300px;
+  margin-top: 10px;
+}
+
+.table th, td {
+  text-align: center;
+}
+
+#donations, #members {
+  margin-top: 20px;
 }

@@ -1,4 +1,5 @@
 class Member < ActiveRecord::Base
+	attr_accessor :name
 	belongs_to :user
 	belongs_to :group
 
@@ -15,4 +16,11 @@ class Member < ActiveRecord::Base
 	CONFERENCE_OPTION = %W(OC BC AC OB OC)
 	validates :conference_option, inclusion: {in: CONFERENCE_OPTION}
 
+	def name
+		if !self.chinese_name.blank?
+			chinese_name
+		else
+			"#{firstname} #{lastname}"
+		end
+	end
 end

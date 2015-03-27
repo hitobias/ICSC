@@ -12,7 +12,7 @@
 	</head>
 	<body>
 		<%= render 'layouts/header' %>
-		<% if logged_in? && current_user.role == "normal" %>
+		<% if logged_in? && current_user.role == "normal" && !current_page?(root_path) && !current_page?(tours_path) %>
 			<%= render 'layouts/application_navbar' %>
 		<% elsif logged_in? && current_user.role == "root"
 			 %>
